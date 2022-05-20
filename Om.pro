@@ -1,12 +1,14 @@
 TEMPLATE = app
-CONFIG += console c++11
+CONFIG += console
 CONFIG -= app_bundle
 CONFIG -= qt
 
-INCLUDEPATH += "C:/Projects/pcx"
+DEFINES -= UNICODE
 
-PRE_TARGETDEPS += "C:/Projects/pcx/build-pcx/release/libpcx.a"
+INCLUDEPATH += C:/wclang/include \
+               "C:/Projects/pcx"
 
-LIBS += "C:/Projects/pcx/build-pcx/release/libpcx.a"
+LIBS += -L"C:/wclang/lib" \
+        "C:/Projects/pcx/build-pcx/Release/libpcx.a"
 
 SOURCES += main.cpp
